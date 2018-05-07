@@ -585,13 +585,7 @@ function isLittleEndian() {
 
 // Checks if it's possible to eval JS expressions.
 function isEvalSupported() {
-  try {
-    /* jshint evil: true */
-    new Function('');
-    return true;
-  } catch (e) {
-    return false;
-  }
+  return false;
 }
 
 //#if !(FIREFOX || MOZCENTRAL || CHROME)

@@ -28,8 +28,8 @@ factory((root.pdfjsDistBuildPdfWorker = {}));
   // Use strict in our context only - users might not want it
   'use strict';
 
-var pdfjsVersion = '1.4.266';
-var pdfjsBuild = '5cc40932';
+var pdfjsVersion = '1.4.267';
+var pdfjsBuild = '15fbf2a1';
 
   var pdfjsFilePath =
     typeof document !== 'undefined' && document.currentScript ?
@@ -2627,13 +2627,7 @@ function isLittleEndian() {
 
 // Checks if it's possible to eval JS expressions.
 function isEvalSupported() {
-  try {
-    /* jshint evil: true */
-    new Function('');
-    return true;
-  } catch (e) {
-    return false;
-  }
+  return false;
 }
 
 var Uint32ArrayView = (function Uint32ArrayViewClosure() {

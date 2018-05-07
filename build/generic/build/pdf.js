@@ -28,8 +28,8 @@ factory((root.pdfjsDistBuildPdf = {}));
   // Use strict in our context only - users might not want it
   'use strict';
 
-var pdfjsVersion = '1.4.266';
-var pdfjsBuild = '5cc40932';
+var pdfjsVersion = '1.4.267';
+var pdfjsBuild = '15fbf2a1';
 
   var pdfjsFilePath =
     typeof document !== 'undefined' && document.currentScript ?
@@ -606,13 +606,7 @@ function isLittleEndian() {
 
 // Checks if it's possible to eval JS expressions.
 function isEvalSupported() {
-  try {
-    /* jshint evil: true */
-    new Function('');
-    return true;
-  } catch (e) {
-    return false;
-  }
+  return false;
 }
 
 var Uint32ArrayView = (function Uint32ArrayViewClosure() {
@@ -2542,7 +2536,7 @@ function getDefaultSetting(id) {
     case 'imageResourcesPath':
       return globalSettings ? globalSettings.imageResourcesPath : '';
     case 'isEvalSupported':
-      return globalSettings ? globalSettings.isEvalSupported : true;
+      return globalSettings ? globalSettings.isEvalSupported : false;
     case 'externalLinkTarget':
       if (!globalSettings) {
         return LinkTarget.NONE;
@@ -10801,7 +10795,7 @@ exports._UnsupportedManager = _UnsupportedManager;
     * @var {boolean}
     */
   PDFJS.isEvalSupported = (PDFJS.isEvalSupported === undefined ?
-                           true : PDFJS.isEvalSupported);
+                           false : PDFJS.isEvalSupported);
 
   var savedOpenExternalLinksInNewWindow = PDFJS.openExternalLinksInNewWindow;
   delete PDFJS.openExternalLinksInNewWindow;

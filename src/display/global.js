@@ -241,7 +241,7 @@
     * @var {boolean}
     */
   PDFJS.isEvalSupported = (PDFJS.isEvalSupported === undefined ?
-                           true : PDFJS.isEvalSupported);
+                           false : PDFJS.isEvalSupported);
 
 //#if !MOZCENTRAL
   var savedOpenExternalLinksInNewWindow = PDFJS.openExternalLinksInNewWindow;
