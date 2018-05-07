@@ -187,7 +187,7 @@ function getDefaultSetting(id) {
     case 'imageResourcesPath':
       return globalSettings ? globalSettings.imageResourcesPath : '';
     case 'isEvalSupported':
-      return globalSettings ? globalSettings.isEvalSupported : false;
+      return false;
     case 'externalLinkTarget':
       if (!globalSettings) {
         return LinkTarget.NONE;

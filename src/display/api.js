@@ -1503,7 +1503,7 @@ var WorkerTransport = (function WorkerTransportClosure() {
                 };
               }
               font = new FontFaceObject(exportedData, {
-                isEvalSuported: getDefaultSetting('isEvalSupported'),
+                isEvalSuported: false,
                 disableFontFace: getDefaultSetting('disableFontFace'),
                 fontRegistry: fontRegistry
               });

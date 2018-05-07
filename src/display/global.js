@@ -240,8 +240,7 @@
     * performance for font rendering.
     * @var {boolean}
     */
-  PDFJS.isEvalSupported = (PDFJS.isEvalSupported === undefined ?
-                           false : PDFJS.isEvalSupported);
+  PDFJS.isEvalSupported = false;
 
 //#if !MOZCENTRAL
   var savedOpenExternalLinksInNewWindow = PDFJS.openExternalLinksInNewWindow;

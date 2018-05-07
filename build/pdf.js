@@ -28,8 +28,8 @@ factory((root.pdfjsDistBuildPdf = {}));
   // Use strict in our context only - users might not want it
   'use strict';
 
-var pdfjsVersion = '1.4.267';
-var pdfjsBuild = '15fbf2a1';
+var pdfjsVersion = '1.4.268';
+var pdfjsBuild = 'c7700fcb';
 
   var pdfjsFilePath =
     typeof document !== 'undefined' && document.currentScript ?
@@ -2548,7 +2548,7 @@ function getDefaultSetting(id) {
     case 'imageResourcesPath':
       return globalSettings ? globalSettings.imageResourcesPath : '';
     case 'isEvalSupported':
-      return globalSettings ? globalSettings.isEvalSupported : false;
+      return false;
     case 'externalLinkTarget':
       if (!globalSettings) {
         return LinkTarget.NONE;
@@ -2973,7 +2973,7 @@ var FontFaceObject = (function FontFaceObjectClosure() {
         var current, i, len;
 
         // If we can, compile cmds into JS for MAXIMUM SPEED
-        if (this.options.isEvalSupported && IsEvalSupportedCached.value) {
+        if (false) {
           var args, js = '';
           for (i = 0, len = cmds.length; i < len; i++) {
             current = cmds[i];
@@ -10068,7 +10068,7 @@ var WorkerTransport = (function WorkerTransportClosure() {
                 };
               }
               font = new FontFaceObject(exportedData, {
-                isEvalSuported: getDefaultSetting('isEvalSupported'),
+                isEvalSuported: false,
                 disableFontFace: getDefaultSetting('disableFontFace'),
                 fontRegistry: fontRegistry
               });
@@ -10845,8 +10845,7 @@ exports._UnsupportedManager = _UnsupportedManager;
     * performance for font rendering.
     * @var {boolean}
     */
-  PDFJS.isEvalSupported = (PDFJS.isEvalSupported === undefined ?
-                           false : PDFJS.isEvalSupported);
+  PDFJS.isEvalSupported = false;
 
 //#if !MOZCENTRAL
   var savedOpenExternalLinksInNewWindow = PDFJS.openExternalLinksInNewWindow;
